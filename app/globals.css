@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-black text-brand-white antialiased;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: #C9A84C;
+    color: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C9A84C;
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .gold-text {
+    background: linear-gradient(135deg, #C9A84C 0%, #E8C66A 50%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    border: 1px solid rgba(201, 168, 76, 0.35);
+  }
+
+  .gold-border-hover {
+    @apply transition-colors duration-300;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .gold-border-hover:hover {
+    border-color: rgba(201, 168, 76, 0.6);
+  }
+
+  .section-py {
+    @apply py-24 md:py-32;
+  }
+
+  .container-max {
+    @apply max-w-6xl mx-auto px-6 md:px-10 lg:px-16;
+  }
+
+  .btn-gold {
+    @apply bg-brand-gold text-brand-black font-semibold px-8 py-4 rounded-lg
+           hover:bg-brand-gold-light active:bg-brand-gold-dark
+           transition-all duration-300 text-base tracking-wide
+           focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-brand-black;
+  }
+
+  .btn-outline {
+    @apply border border-gray-600 text-gray-300 font-medium px-8 py-4 rounded-lg
+           hover:border-brand-gold hover:text-brand-gold
+           transition-all duration-300 text-base tracking-wide
+           focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2 focus:ring-offset-brand-black;
+  }
+
+  .card-dark {
+    @apply bg-brand-card rounded-2xl gold-border p-8;
+  }
+
+  .input-dark {
+    @apply w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3
+           text-brand-white placeholder-gray-500 text-sm
+           focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold
+           transition-colors duration-200;
+  }
+
+  .label-dark {
+    @apply block text-sm font-medium text-gray-300 mb-1.5;
+  }
+}
+
+/* Grid pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Noise texture overlay */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold shimmer line */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+
+/* Glow effect */
+.gold-glow {
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+}
+
+/* Fade animations for sections */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
