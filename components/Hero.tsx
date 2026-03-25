@@ -1,8 +1,10 @@
+import Image from 'next/image'
+
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B2A] via-brand-black to-brand-black" />
@@ -10,61 +12,65 @@ export default function Hero() {
       {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-60" />
 
-      {/* Radial glow top-center */}
+      {/* Radial glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 container-max text-center pt-24 pb-16">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full gold-border mb-10 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse-slow inline-block" />
-          <span className="text-xs text-brand-gold font-inter font-medium tracking-[0.2em] uppercase">
-            Para Ejecutivos de Alto Nivel
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h1 className="font-playfair font-bold text-5xl sm:text-6xl md:text-7xl lg:text-[82px] leading-[1.08] tracking-tight mb-8 animate-fade-up">
-          Tu Marca Personal en
-          <br />
-          <span className="gold-text">LinkedIn, Construida</span>
-          <br />
-          <span className="text-gray-200">desde Adentro</span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-inter leading-relaxed animate-fade-up">
-          Trabajo en LinkedIn Colombia & México. Sé exactamente cómo los
-          ejecutivos pueden construir autoridad real, atraer oportunidades de
-          alto nivel y crear una comunidad que genere impacto.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20 animate-fade-up">
-          <a href="#registro" className="btn-gold text-base">
-            Quiero construir mi marca →
-          </a>
-          <a href="#metodo" className="btn-outline text-base">
-            Conoce el método
-          </a>
-        </div>
-
-        {/* Social proof mini */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 animate-fade-in">
-          {[
-            { number: '+500', label: 'Conexiones estratégicas' },
-            { number: '2', label: 'Países: Colombia & México' },
-            { number: '5+', label: 'Años en HR Tech & B2B' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-playfair font-bold text-3xl gold-text mb-1">
-                {stat.number}
-              </p>
-              <p className="text-gray-500 text-xs font-inter uppercase tracking-wider">
-                {stat.label}
-              </p>
+      <div className="relative z-10 container-max pt-28 pb-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Text column */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full gold-border mb-8 animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse-slow inline-block" />
+              <span className="text-xs text-brand-gold font-inter font-medium tracking-[0.2em] uppercase">
+                Talent Influencer System™
+              </span>
             </div>
-          ))}
+
+            {/* Headline */}
+            <h1 className="font-playfair font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.08] tracking-tight mb-6 animate-fade-up">
+              Activa a tus líderes como{' '}
+              <span className="gold-text">Talent Influencers</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-lg md:text-xl text-gray-400 max-w-lg mb-4 font-inter leading-relaxed animate-fade-up">
+              Convierte a tu equipo directivo en el principal canal de atracción
+              de talento y posicionamiento de marca empleadora en LinkedIn.
+            </p>
+
+            {/* Support text */}
+            <p className="text-base text-gray-500 max-w-lg mb-10 font-inter leading-relaxed animate-fade-up">
+              Desarrollamos líderes visibles, alineados con tu marca, que generan
+              reputación y atraen talento de forma orgánica.
+            </p>
+
+            {/* CTA */}
+            <div className="animate-fade-up">
+              <a href="#registro" className="btn-gold text-base">
+                Solicita diagnóstico estratégico →
+              </a>
+            </div>
+          </div>
+
+          {/* Image column */}
+          <div className="relative hidden md:block">
+            <div className="relative w-full aspect-[4/5] max-w-md ml-auto rounded-2xl overflow-hidden gold-border gold-glow">
+              <Image
+                src="/photos/nizzhar-speaker.jpeg"
+                alt="Nizzhar Vargas — Talent Influencer System"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-4 -left-4 bg-brand-card gold-border rounded-xl px-5 py-4 gold-glow">
+              <p className="text-brand-gold font-playfair font-bold text-xl leading-tight">Partner Lead</p>
+              <p className="text-gray-400 text-xs font-inter uppercase tracking-wider mt-1">LinkedIn CO & MX</p>
+            </div>
+          </div>
         </div>
       </div>
 

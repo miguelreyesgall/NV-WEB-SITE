@@ -24,7 +24,7 @@ export default function LeadForm() {
   const [errorMsg, setErrorMsg] = useState('')
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
@@ -58,7 +58,7 @@ export default function LeadForm() {
   }
 
   return (
-    <section id="registro" className="section-py bg-brand-dark relative overflow-hidden">
+    <section id="registro" className="section-py bg-brand-black relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-gold/4 rounded-full blur-[100px] pointer-events-none" />
 
@@ -67,16 +67,15 @@ export default function LeadForm() {
           {/* Header */}
           <div className="text-center mb-12">
             <p className="text-brand-gold text-xs font-inter font-medium uppercase tracking-[0.25em] mb-4">
-              Empieza hoy
+              Diagnóstico estratégico
             </p>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl leading-tight mb-4">
-              Reserva tu lugar en
-              <br />
-              <span className="gold-text">la comunidad</span>
+              Descubre el potencial de{' '}
+              <span className="gold-text">tus líderes</span>
             </h2>
             <p className="text-gray-400 font-inter text-base leading-relaxed">
-              Déjanos tus datos y recibirás acceso anticipado, contenido
-              exclusivo y una bienvenida personalizada.
+              Solicita un diagnóstico estratégico y conoce cómo convertir a tu
+              equipo en un canal activo de atracción de talento.
             </p>
           </div>
 
@@ -88,14 +87,14 @@ export default function LeadForm() {
                   <span className="text-brand-gold text-2xl">✓</span>
                 </div>
                 <h3 className="font-playfair font-bold text-2xl text-brand-white mb-3">
-                  ¡Bienvenido a la comunidad!
+                  ¡Solicitud recibida!
                 </h3>
                 <p className="text-gray-400 font-inter text-[15px] leading-relaxed max-w-sm mx-auto mb-2">
-                  Revisa tu bandeja de entrada. Te enviamos un correo con
-                  contenido de valor y los próximos pasos.
+                  Nos pondremos en contacto contigo pronto para agendar tu
+                  diagnóstico estratégico.
                 </p>
                 <p className="text-gray-500 font-inter text-sm">
-                  (Si no lo ves, revisa spam o promociones)
+                  (Revisa tu bandeja de entrada)
                 </p>
               </div>
             ) : (
@@ -119,7 +118,7 @@ export default function LeadForm() {
                   </div>
                   <div>
                     <label htmlFor="email" className="label-dark">
-                      Email profesional <span className="text-brand-gold">*</span>
+                      Email corporativo <span className="text-brand-gold">*</span>
                     </label>
                     <input
                       id="email"
@@ -138,7 +137,7 @@ export default function LeadForm() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="cargo" className="label-dark">
-                      Cargo / Posición <span className="text-brand-gold">*</span>
+                      Cargo <span className="text-brand-gold">*</span>
                     </label>
                     <input
                       id="cargo"
@@ -147,18 +146,19 @@ export default function LeadForm() {
                       required
                       value={form.cargo}
                       onChange={handleChange}
-                      placeholder="Ej: Director Comercial"
+                      placeholder="Ej: VP de Talento Humano"
                       className="input-dark"
                     />
                   </div>
                   <div>
                     <label htmlFor="empresa" className="label-dark">
-                      Empresa
+                      Empresa <span className="text-brand-gold">*</span>
                     </label>
                     <input
                       id="empresa"
                       name="empresa"
                       type="text"
+                      required
                       value={form.empresa}
                       onChange={handleChange}
                       placeholder="Nombre de tu empresa"
@@ -170,7 +170,7 @@ export default function LeadForm() {
                 {/* Desafío */}
                 <div>
                   <label htmlFor="desafio" className="label-dark">
-                    ¿Cuál es tu mayor desafío al construir tu marca personal?
+                    ¿Cuál es el principal reto de tu marca empleadora hoy?
                   </label>
                   <textarea
                     id="desafio"
@@ -178,7 +178,7 @@ export default function LeadForm() {
                     rows={3}
                     value={form.desafio}
                     onChange={handleChange}
-                    placeholder="Cuéntanos brevemente dónde estás y qué quieres lograr..."
+                    placeholder="Cuéntanos brevemente..."
                     className="input-dark resize-none"
                   />
                 </div>
@@ -204,17 +204,27 @@ export default function LeadForm() {
                       Enviando...
                     </>
                   ) : (
-                    'Quiero reservar mi lugar →'
+                    'Solicitar diagnóstico →'
                   )}
                 </button>
 
-                {/* Privacy note */}
                 <p className="text-gray-600 text-xs font-inter text-center leading-relaxed">
                   Tu información es confidencial. Sin spam, sin venta de datos.
-                  Solo contenido de valor y comunicaciones relevantes.
                 </p>
               </form>
             )}
+          </div>
+
+          {/* Closing statement */}
+          <div className="text-center mt-16">
+            <div className="gold-line mb-8" />
+            <p className="font-playfair text-xl md:text-2xl text-gray-300 leading-relaxed max-w-lg mx-auto">
+              No necesitas más inversión en visibilidad.
+            </p>
+            <p className="font-playfair text-xl md:text-2xl text-brand-white font-bold mt-2">
+              Necesitas que tus líderes empiecen a generarla.
+            </p>
+            <div className="gold-line mt-8" />
           </div>
         </div>
       </div>

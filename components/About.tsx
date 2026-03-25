@@ -1,78 +1,67 @@
 import Image from 'next/image'
 
+const bullets = [
+  'Desarrollamos marca personal alineada con la empresa',
+  'Optimizamos perfiles de LinkedIn con enfoque estratégico',
+  'Creamos sistemas simples de contenido para líderes',
+  'Activamos visibilidad sin depender de esfuerzos aislados',
+  'Acompañamos el proceso con feedback continuo',
+]
+
 export default function About() {
   return (
-    <section id="sobre-mi" className="section-py bg-brand-black">
+    <section id="solucion" className="section-py bg-brand-black">
       <div className="container-max">
+        {/* Solution header */}
+        <div className="text-center mb-20">
+          <p className="text-brand-gold text-xs font-inter font-medium uppercase tracking-[0.25em] mb-4">
+            La solución
+          </p>
+          <h2 className="font-playfair font-bold text-4xl md:text-5xl leading-tight mb-4">
+            <span className="gold-text">Talent Influencer System™</span>
+          </h2>
+          <p className="text-gray-300 font-inter text-lg max-w-2xl mx-auto leading-relaxed mb-3">
+            Un programa estratégico diseñado para desarrollar líderes visibles que
+            fortalecen la marca empleadora y generan atracción de talento desde LinkedIn.
+          </p>
+          <p className="text-gray-500 font-inter text-base max-w-xl mx-auto italic">
+            No es capacitación tradicional. Es un proceso guiado de posicionamiento real.
+          </p>
+        </div>
+
+        {/* What we do */}
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image placeholder */}
-          <div className="relative order-2 md:order-1">
-            <div className="relative w-full aspect-[3/4] max-w-sm mx-auto">
-              {/* Photo */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden gold-border">
-                <Image
-                  src="/nizzhar.png"
-                  alt="Nizzhar Vargas — Partner Lead LinkedIn Colombia & México"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-
-              {/* Decorative corners */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-brand-gold/30 rounded-br-2xl" />
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-brand-gold/30 rounded-tl-2xl" />
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -left-6 bg-brand-card gold-border rounded-xl px-5 py-4 gold-glow">
-                <p className="text-brand-gold font-playfair font-bold text-xl leading-tight">Partner Lead</p>
-                <p className="text-gray-400 text-xs font-inter uppercase tracking-wider mt-1">LinkedIn CO & MX</p>
-              </div>
+          {/* Image */}
+          <div className="relative">
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden gold-border gold-glow">
+              <Image
+                src="/photos/nizzhar-presenting.jpeg"
+                alt="Nizzhar presentando soluciones con IA y LinkedIn"
+                fill
+                className="object-cover"
+              />
             </div>
+            {/* Decorative corners */}
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-brand-gold/30 rounded-br-2xl" />
           </div>
 
-          {/* Text content */}
-          <div className="order-1 md:order-2">
+          {/* Bullets */}
+          <div>
             <p className="text-brand-gold text-xs font-inter font-medium uppercase tracking-[0.25em] mb-4">
-              Sobre Nizzhar
+              Qué hacemos
             </p>
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl leading-tight mb-6">
-              El ejecutivo que conoce
-              <br />
-              <span className="gold-text">LinkedIn desde adentro</span>
-            </h2>
+            <h3 className="font-playfair font-bold text-3xl md:text-4xl leading-tight mb-8">
+              Convertimos líderes en{' '}
+              <span className="gold-text">activos estratégicos</span> de marca
+            </h3>
 
-            <div className="gold-line mb-8 w-16" />
-
-            <p className="text-gray-300 leading-relaxed mb-6 font-inter text-[15px]">
-              Soy administrador de empresas con más de 5 años liderando
-              alianzas estratégicas y desarrollando negocios B2B en el sector
-              de talento humano y HR Tech. Hoy me desempeño como{' '}
-              <span className="text-brand-white font-medium">
-                Partner Lead en LinkedIn Colombia & México
-              </span>
-              , donde impulso soluciones de reclutamiento, employer branding y
-              desarrollo organizacional para empresas de alto nivel.
-            </p>
-            <p className="text-gray-400 leading-relaxed mb-10 font-inter text-[15px]">
-              Esa posición me da algo que nadie más tiene: sé exactamente cómo
-              funciona LinkedIn por dentro — el algoritmo, las estrategias de
-              visibilidad y los patrones que separan a los ejecutivos anónimos
-              de los referentes de industria. Y quiero ayudarte a hacer ese
-              salto.
-            </p>
-
-            {/* Credenciales reales */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: '◈', text: 'Partner Lead LinkedIn CO & MX' },
-                { icon: '◈', text: 'Strategic Alliances & B2B' },
-                { icon: '◈', text: 'HR Tech & Employer Branding' },
-                { icon: '◈', text: 'Bogotá, Colombia' },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-3">
-                  <span className="text-brand-gold text-sm">{item.icon}</span>
-                  <span className="text-gray-300 text-sm font-inter">{item.text}</span>
+            <div className="flex flex-col gap-5">
+              {bullets.map((b, i) => (
+                <div key={i} className="flex gap-4 items-start">
+                  <div className="w-6 h-6 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-brand-gold text-[10px]">✓</span>
+                  </div>
+                  <p className="text-gray-300 font-inter text-[15px] leading-relaxed">{b}</p>
                 </div>
               ))}
             </div>

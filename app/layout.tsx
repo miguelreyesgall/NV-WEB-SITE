@@ -16,28 +16,29 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Nizzhar Vargas | Marca Personal en LinkedIn para Ejecutivos',
+  title: 'Talent Influencer System™ | Nizzhar Vargas',
   description:
-    'Partner Lead en LinkedIn Colombia & México. Aprende a construir tu marca personal en LinkedIn desde adentro: estrategias reales para directivos y líderes de alto nivel.',
+    'Convierte a tu equipo directivo en el principal canal de atracción de talento y posicionamiento de marca empleadora en LinkedIn.',
   keywords: [
-    'marca personal LinkedIn ejecutivos',
-    'personal branding LinkedIn Colombia',
+    'talent influencer',
+    'marca empleadora LinkedIn',
+    'employer branding',
+    'líderes LinkedIn',
+    'atracción de talento',
     'Nizzhar Vargas',
-    'Partner Lead LinkedIn Colombia',
-    'employer branding ejecutivos',
-    'liderazgo corporativo LinkedIn',
   ],
   openGraph: {
-    title: 'Nizzhar Vargas | Marca Personal para Ejecutivos',
+    title: 'Talent Influencer System™ | Nizzhar Vargas',
     description:
-      'Construye la marca personal que refleja tu verdadero impacto.',
+      'Activa a tus líderes como Talent Influencers. Marca empleadora + LinkedIn.',
     type: 'website',
     locale: 'es_ES',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nizzhar Vargas | Marca Personal para Ejecutivos',
-    description: 'Construye la marca personal que refleja tu verdadero impacto.',
+    title: 'Talent Influencer System™ | Nizzhar Vargas',
+    description:
+      'Convierte a tu equipo directivo en el principal canal de atracción de talento.',
   },
 }
 

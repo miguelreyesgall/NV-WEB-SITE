@@ -14,10 +14,10 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-playfair font-semibold text-brand-white text-sm leading-tight">
-                Nizzhar Vargas
+                Talent Influencer System™
               </p>
               <p className="text-gray-600 text-[10px] uppercase tracking-widest">
-                Marca Personal para Ejecutivos
+                by Nizzhar Vargas
               </p>
             </div>
           </div>
@@ -25,10 +25,10 @@ export default function Footer() {
           {/* Links */}
           <div className="flex gap-6">
             {[
-              { label: 'Sobre mí', href: '#sobre-mi' },
-              { label: 'Método', href: '#metodo' },
-              { label: 'Comunidad', href: '#comunidad' },
-              { label: 'Únete', href: '#registro' },
+              { label: 'Problema', href: '#problema' },
+              { label: 'Sistema', href: '#solucion' },
+              { label: 'Metodología', href: '#metodologia' },
+              { label: 'Diagnóstico', href: '#registro' },
             ].map((link) => (
               <a
                 key={link.href}
@@ -44,8 +44,8 @@ export default function Footer() {
         <div className="gold-line mt-10 mb-6" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-xs font-inter">
-          <p>© {year} Nizzhar Vargas. Todos los derechos reservados.</p>
-          <p>Construido con propósito · Diseñado para el impacto</p>
+          <p>&copy; {year} Nizzhar Vargas. Todos los derechos reservados.</p>
+          <p>Talent Influencer System™ &middot; Construido con propósito</p>
         </div>
       </div>
     </footer>

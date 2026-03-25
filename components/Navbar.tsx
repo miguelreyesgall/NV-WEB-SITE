@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { label: 'Sobre Nizzhar', href: '#sobre-mi' },
-  { label: 'El Método', href: '#metodo' },
-  { label: 'Comunidad', href: '#comunidad' },
+  { label: 'Problema', href: '#problema' },
+  { label: 'Sistema', href: '#solucion' },
+  { label: 'Metodología', href: '#metodologia' },
+  { label: 'Impacto', href: '#impacto' },
 ]
 
 export default function Navbar() {
@@ -36,10 +37,10 @@ export default function Navbar() {
           </div>
           <div className="hidden sm:flex flex-col">
             <span className="font-playfair font-semibold text-brand-white text-sm leading-tight tracking-wide">
-              Nizzhar Vargas
+              Talent Influencer
             </span>
             <span className="text-gray-500 text-[10px] uppercase tracking-widest leading-tight">
-              Marca Personal
+              System™
             </span>
           </div>
         </a>
@@ -62,7 +63,7 @@ export default function Navbar() {
           href="#registro"
           className="hidden md:inline-flex btn-gold text-sm px-6 py-3"
         >
-          Reserva tu lugar
+          Solicitar diagnóstico
         </a>
 
         {/* Mobile hamburger */}
@@ -92,7 +93,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? 'max-h-64' : 'max-h-0'
+          menuOpen ? 'max-h-72' : 'max-h-0'
         } bg-brand-dark border-b border-gray-800`}
       >
         <div className="container-max py-6 flex flex-col gap-5">
@@ -111,7 +112,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="btn-gold text-center text-sm"
           >
-            Reserva tu lugar
+            Solicitar diagnóstico
           </a>
         </div>
       </div>
