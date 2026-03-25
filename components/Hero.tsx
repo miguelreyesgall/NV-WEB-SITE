@@ -58,10 +58,10 @@ export default function Hero() {
           <div className="relative hidden md:block">
             <div className="relative w-full aspect-[4/5] max-w-md ml-auto rounded-2xl overflow-hidden gold-border gold-glow">
               <Image
-                src="/photos/nizzhar-speaker.jpeg"
+                src="/photos/nizzhar-hero.png"
                 alt="Nizzhar Vargas — Talent Influencer System"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 priority
               />
             </div>
