@@ -1,9 +1,13 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 const FROM = process.env.RESEND_FROM_EMAIL || 'Nizzhar Vargas <hola@nizzharvargas.com>'
 const NIZZHAR_EMAIL = process.env.NIZZHAR_EMAIL || 'nizzhar@nizzharvargas.com'
+
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) throw new Error('RESEND_API_KEY is not configured.')
+  return new Resend(apiKey)
+}
 
 export async function sendWelcomeEmail(nombre: string, email: string, cargo: string) {
   const firstName = nombre.split(' ')[0]
@@ -182,7 +186,7 @@ export async function sendWelcomeEmail(nombre: string, email: string, cargo: str
 </html>
   `.trim()
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: email,
     subject: `${firstName}, tu lugar está reservado — empieza aquí`,
@@ -197,7 +201,7 @@ export async function sendLeadNotification(
   empresa: string,
   desafio: string
 ) {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: NIZZHAR_EMAIL,
     subject: `🔔 Nuevo lead: ${nombre} — ${cargo}`,
