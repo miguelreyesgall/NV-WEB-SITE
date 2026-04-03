@@ -35,15 +35,24 @@ export default function LeadForm() {
     setErrorMsg('')
 
     try {
-      const res = await fetch('/api/subscribe', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          access_key: 'b3747e1e-d899-4dd4-bf79-b28f768226f0',
+          subject: `Nuevo diagnóstico estratégico — ${form.nombre} (${form.empresa})`,
+          from_name: 'Talent Influencer System™',
+          nombre: form.nombre,
+          email: form.email,
+          cargo: form.cargo,
+          empresa: form.empresa,
+          desafio: form.desafio || '(no especificado)',
+        }),
       })
 
       const data = await res.json()
 
-      if (!res.ok) {
+      if (!data.success) {
         setStatus('error')
         setErrorMsg(data.message || 'Ocurrió un error. Por favor intenta nuevamente.')
         return
